@@ -16,10 +16,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
 <link rel="import" href="sign-in.html">
+<link rel="import" href="../bower_components/login-fire/login-fire.html">
 
 <dom-module id="my-view1">
   <firebase-app
-    id="firebase-auth"
+    id="fbAuth"
+    name="fbAuth"
     auth-domain="cebuhomepages-931fb.firebaseapp.com"
     database-url="https://cebuhomepages-931fb.firebaseio.com/"
     api-key="AIzaSyBdIiYx1cSu7n6xMmvn603MjnMKToFe5tA"
@@ -52,11 +54,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="card">
       <sign-in></sign-in>
     </div>
+
+    <div class="card">
+       <template is="dom-if" if="[[user]]">
+            Hi there [[user.displayName]] [[user.email]]
+        </template>
+      <login-fire email-password google facebook app-name="fbAuth" user="{{user}}" signed-in="{{signedIn}}"></login-fire>
+    </div>
   </template>
 
   <script>
     Polymer({
       is: 'my-view1',
+      properties:{
+        user:{
+          type: Object
+        }
+      }
     });
   </script>
 </dom-module>

@@ -7,11 +7,11 @@
             id="auth"
             user="{{user}}"
             status-known={{statusKnown}}
-            provider="google"
+            provider="facebook"
         ></firebase-auth>
 
         <template is="dom-if" if="[[user]]">
-            Hi there [[user.displayName]]
+            Hi there [[user.displayName]] [[user.email]]
         </template>
 
         <paper-button raised on-tap="login" hidden$="[[user]]">Sign In</paper-button>

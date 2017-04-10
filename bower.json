@@ -20,7 +20,8 @@
     "vaadin-grid": "^1.2.2",
     "vaadin-date-picker": "^1.2.2",
     "paper-card": "polymerelements/paper-card#^1.1.4",
-    "polymerfire": "firebase/polymerfire#^0.10.3"
+    "polymerfire": "firebase/polymerfire#^0.10.3",
+    "login-fire": "^0.1.5"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
