@@ -14,8 +14,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/vaadin-date-picker/vaadin-date-picker.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="sign-in.html">
 
 <dom-module id="my-view1">
+  <firebase-app
+    id="firebase-auth"
+    auth-domain="cebuhomepages-931fb.firebaseapp.com"
+    database-url="https://cebuhomepages-931fb.firebaseio.com/"
+    api-key="AIzaSyBdIiYx1cSu7n6xMmvn603MjnMKToFe5tA"
+  ></firebase-app>
   <template>
     <style include="shared-styles">
       :host {
@@ -40,6 +48,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <vaadin-date-picker label="Due"></vaadin-date-picker>
         <paper-button raised>Add Todos</paper-button>
       </div>
+    </div>
+    <div class="card">
+      <sign-in></sign-in>
     </div>
   </template>
 
